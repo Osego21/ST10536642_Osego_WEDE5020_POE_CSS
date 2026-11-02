@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Paeds in a Pod</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <span>info@paedsinapod.biz | 066 237 4237</span>
+  <span>418 Rossouw St, Pretoria</span>
+</div>
+
+<header>
+  <div class="header-container">
+    <div class="logo"><a href="index.html"><img src="images/Logo-1.png" alt="Paeds in a Pod"></a></div>
+    <nav class="nav">
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contactus.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="section section-white">
+  <div class="contact-box">
+    <h1 style="margin-top:0; text-align:center">Contact Us</h1>
+    <p style="text-align:center">📞 066 237 4237 | ✉ osegopetersseeti2@gmail.com</p>
+    <p style="text-align:center">📍 418 Rossouw Street, Pretoria<br>🕒 Mon-Thu 08:00-17:00 | Fri 08:00-16:00 | Closed Public Holidays</p>
+    <hr style="margin:18px 0; border:none; border-top:1px solid #e1e5eb">
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <input type="tel" id="phone" placeholder="Phone Number" required>
+      <textarea rows="4" placeholder="How can we help your child?"></textarea>
+      <button type="submit" class="btn btn-primary" style="width:100%">Send Message</button>
+      <p id="formMsg" style="color:green; margin-top:10px; text-align:center"></p>
+    </form>
+    <div style="text-align:center; margin:15px 0">
+      <a href="https://www.instagram.com/paeds_in_a_pod/" class="btn btn-outline" style="font-size:12px">Instagram</a>
+      <a href="https://www.facebook.com/paedsinapodwellness/" class="btn btn-outline" style="font-size:12px">Facebook</a>
+      <a href="https://wa.me/27662374237" class="btn btn-primary" style="font-size:12px">WhatsApp</a>
+    </div>
+    <div style="margin-top:25px; border:1px solid #e1e5eb; border-radius:6px; overflow:hidden">
+      <iframe src="https://www.google.com/maps?q=418+Rossouw+Street,+Pretoria,+South+Africa&z=16&output=embed" width="100%" height="320" style="border:0; display:block;" allowfullscreen loading="lazy"></iframe>
+      <div style="padding:12px 15px; background:#f9fafb; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px">
+        <span style="font-size:13px;"><b>Paeds in a Pod Wellness Center</b><br>418 Rossouw Street, Pretoria</span>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=418+Rossouw+Street+Pretoria" target="_blank" style="color:#0072bc; font-size:13px; font-weight:700; text-decoration:none">Get Directions →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><ul><li>© 2026 Paeds in a Pod Wellness Center</li><li>📍 418 Rossouw Street, Pretoria</li><li>☎ 066 237 4237</li></ul></footer>
+<a href="#" class="back-to-top" id="backToTop">TOP</a>
+<a href="https://wa.me/27662374237" class="wa-btn">WhatsApp Us</a>
+
+<script src="javascript\main.js"></script>
+<script>
+(function(){
+  const h = document.getElementById('hamburger');
+  const m = document.getElementById('nav-menu');
+  if(h && m){
+    h.addEventListener('click', function(e){
+      e.preventDefault();
+      if(m.classList.contains('active')){
+        m.classList.remove('active');
+        m.style.setProperty('display','none','important');
+      } else {
+        m.classList.add('active');
+        m.style.setProperty('display','flex','important');
+        m.style.setProperty('flex-direction','column','important');
+        m.style.setProperty('position','absolute','important');
+        m.style.setProperty('top','70px','important');
+        m.style.setProperty('left','0','important');
+        m.style.setProperty('width','100%','important');
+        m.style.setProperty('background','#fff','important');
+        m.style.setProperty('padding','20px','important');
+        m.style.setProperty('z-index','1000','important');
+      }
+    });
+    window.addEventListener('resize', function(){
+      if(window.innerWidth > 768){ m.removeAttribute('style'); m.classList.remove('active'); }
+    });
+  }
+  const form = document.getElementById('contactForm');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('formMsg').textContent = 'Thank you! We will contact you soon.';
+      form.reset();
+    });
+  }
+})();
+</script>
+</body>
+</html>

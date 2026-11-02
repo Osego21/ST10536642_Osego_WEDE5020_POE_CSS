@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services - Paeds in a Pod</title>
+<link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+<div class="top-bar"><span>info@paedsinapod.biz | 066 237 4237</span><span>418 Rossouw St, Pretoria</span></div>
+
+<header>
+  <div class="header-container">
+    <div class="logo"><a href="index.html"><img src="images/Logo-1.png" alt="logo"></a></div>
+    <nav class="nav">
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contactus.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="section">
+<h1>Our Services</h1>
+<input type="text" id="serviceSearch" class="search-box" placeholder="Search: ADHD, Autism, speech, newborn...">
+
+<div class="service-card"><h3>Newborn & Milestone Check-ups</h3><p>Assessment of weight gain, feeding concerns, developmental screening for gross motor, fine motor, language.</p></div>
+<div class="service-card"><h3>Sick Child & General Consultation</h3><p>Acute illness, chronic conditions, potty training, nutrition, sleep, behaviour, adolescent health. Birth-18 years.</p></div>
+<div class="service-card"><h3>ADHD / Autism / Learning Difficulties Assessment</h3><p>Comprehensive evaluation, parent education, individualised management - not one-size-fits-all.</p></div>
+<div class="service-card"><h3>School Support & Behavioural Challenges</h3><p>Specific strategies, coping mechanisms, child-specific plan with multidisciplinary approach.</p></div>
+<div class="service-card"><h3>Parent Coaching & Developmental Delays</h3><p>Support, strategies, early intervention for preterm infants and at-risk children.</p></div>
+<div class="service-card"><h3>Counselling</h3><p>Neurodiversity-affirming counselling for ADHD, autism, anxiety for ages 5+, teens, young adults. Play-based, practical skills.</p></div>
+<div class="service-card"><h3>Speech-Language Therapy</h3><p>Spelling to Communicate, Articulation, Expressive Language, Auditory Processing, Phonological Awareness, Reading & Spelling, Pragmatic Language, Picky Eating.</p></div>
+</section>
+
+<footer><ul><li>© 2026 Paeds in a Pod</li><li><a href="https://wa.me/27662374237">WhatsApp</a></li></ul></footer>
+<a href="#" class="back-to-top" id="backToTop">TOP</a><a href="https://wa.me/27662374237" class="wa-btn">WhatsApp Us</a>
+
+<script src="javascript\main.js"></script>
+<script>
+
+(function(){
+  const h = document.getElementById('hamburger');
+  const m = document.getElementById('nav-menu');
+  if(h && m){
+    h.addEventListener('click', function(e){
+      e.preventDefault();
+      if(m.classList.contains('active')){
+        m.classList.remove('active');
+        m.style.setProperty('display','none','important');
+      } else {
+        m.classList.add('active');
+        m.style.setProperty('display','flex','important');
+        m.style.setProperty('flex-direction','column','important');
+        m.style.setProperty('position','absolute','important');
+        m.style.setProperty('top','70px','important');
+        m.style.setProperty('left','0','important');
+        m.style.setProperty('width','100%','important');
+        m.style.setProperty('background','#fff','important');
+        m.style.setProperty('padding','20px','important');
+        m.style.setProperty('z-index','1000','important');
+      }
+    });
+    window.addEventListener('resize', function(){
+      if(window.innerWidth > 768){ m.removeAttribute('style'); m.classList.remove('active'); }
+    });
+  }
+  
+  const search = document.getElementById('serviceSearch');
+  if(search){
+    search.addEventListener('input', function(){
+      const q = this.value.toLowerCase();
+      document.querySelectorAll('.service-card').forEach(function(card){
+        card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>

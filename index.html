@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paeds in a Pod Wellness Center</title>
+<link rel="stylesheet" href="CSS/style.css">
+<style>
+
+.gallery-card {
+  border: 2px solid #e1e5eb;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.gallery-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #e1e5eb;
+}
+.gallery-card .g-text {
+  padding: 12px;
+  text-align: left;
+}
+</style>
+</head>
+<body>
+<div class="top-bar"><span>info@paedsinapod.biz | 066 237 4237</span><span>418 Rossouw St, Pretoria</span></div>
+
+<header>
+  <div class="header-container">
+    <div class="logo"><a href="index.html"><img src="images/Logo-1.png" alt="logo"></a></div>
+    <nav class="nav">
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      <ul id="nav-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contactus.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div><h1>Specialised Care for <span>Every Child</span></h1><p>Life is hard enough, your child's mental and physical well-being should not be. Paeds in a Pod is 100% focused on your child - beyond medical knowledge, holistic and individualised.</p><a href="contactus.html" class="btn btn-primary">Book Appointment</a><a href="aboutus.html" class="btn btn-outline">About Us</a></div>
+  <img src="images/Logo-1.png" alt="logo">
+</section>
+
+
+<section class="section" style="background:#f9fbff; padding:50px 20px">
+  <div style="max-width:1150px; margin:0 auto; text-align:center">
+    <h2 style="margin-bottom:8px; color:#0072bc">A Happy Space for Every Child</h2>
+    <p style="color:#666; margin-bottom:28px">Play, therapy and growth in a safe, colourful environment at Paeds in a Pod.</p>
+    
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px">
+
+      
+      <div class="gallery-card">
+        <img src="images\kid2.webp" alt="Group therapy with balls">
+        <div class="g-text"><b>Group Play Therapy</b><br><span style="font-size:12px; color:#666">Social skills & confidence</span></div>
+      </div>
+
+     
+      <div class="gallery-card">
+        <img src="images\kid3.webp" alt="Active play jumping on mats">
+        <div class="g-text"><b>Active Movement</b><br><span style="font-size:12px; color:#666">Motor skills & coordination</span></div>
+      </div>
+
+      
+      <div class="gallery-card">
+        <img src="images\kid4.webp" alt="Classroom support circle">
+        <div class="g-text"><b>Learning Support</b><br><span style="font-size:12px; color:#666">Small groups, big attention</span></div>
+      </div>
+
+      
+      <div class="gallery-card" style="border-color:#0072bc">
+        <img src="images\kid1.webp" alt="I am not bad I have ADHD">
+        <div class="g-text"><b style="color:#0072bc">Understanding, Not Judging</b><br><span style="font-size:12px; color:#666">We see ability, not labels</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section"><div class="card-grid">
+  <div class="card"><h3>General Paediatrics</h3><p>Newborn check-ups, milestone checks, sick child & general consultations. Early detection, best outcomes.</p></div>
+  <div class="card"><h3>ADHD / Autism / Learning</h3><p>Assessment & diagnosis, school support, behavioural challenges, parent coaching.</p></div>
+  <div class="card"><h3>Counselling & Speech Therapy</h3><p>Neurodiversity-affirming counselling and speech-language therapy for communication & feeding.</p></div>
+</div></section>
+
+<footer><ul><li>© 2026 Paeds in a Pod</li><li><a href="https://wa.me/27662374237">WhatsApp</a></li><li><a href="https://www.instagram.com/paeds_in_a_pod/">Instagram</a></li></ul></footer>
+<a href="#" class="back-to-top" id="backToTop">TOP</a><a href="https://wa.me/27662374237" class="wa-btn">WhatsApp Us</a>
+
+<script src="javascript\main.js"></script>
+<script>
+(function(){
+  const h = document.getElementById('hamburger');
+  const m = document.getElementById('nav-menu');
+  if(!h || !m) return;
+  h.addEventListener('click', function(e){
+    e.preventDefault();
+    if(m.classList.contains('active')){
+      m.classList.remove('active');
+      m.style.setProperty('display','none','important');
+    } else {
+      m.classList.add('active');
+      m.style.setProperty('display','flex','important');
+      m.style.setProperty('flex-direction','column','important');
+      m.style.setProperty('position','absolute','important');
+      m.style.setProperty('top','70px','important');
+      m.style.setProperty('left','0','important');
+      m.style.setProperty('width','100%','important');
+      m.style.setProperty('background','#fff','important');
+      m.style.setProperty('padding','20px','important');
+      m.style.setProperty('z-index','1000','important');
+    }
+  });
+  window.addEventListener('resize', function(){
+    if(window.innerWidth > 768){ m.removeAttribute('style'); m.classList.remove('active'); }
+  });
+})();
+</script>
+</body>
+</html>
